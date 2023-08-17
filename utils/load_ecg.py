@@ -4,7 +4,7 @@ import wfdb
 
 def load_ecg(path, file_name, format, seconds_start, seconds_stop, sampling_rate, channel=0):
 
-    file_path = path + "/" + file_name
+    file_path = path + file_name
     ecg = []
     if seconds_start == 0:
         seconds_start = 1
@@ -13,10 +13,10 @@ def load_ecg(path, file_name, format, seconds_start, seconds_stop, sampling_rate
     sec_stop = seconds_stop*sampling_rate
 
     if format == "txt":
-        ecg = np.genfromtxt(file_path + "/" + file_name, delimiter=',')
+        ecg = np.genfromtxt(file_path, delimiter=',')
         ecg = ecg[sec_start:sec_stop]
     elif format == "csv":
-        df = pd.read_csv('archivio/ecg.csv', sep=';')
+        df = pd.read_csv(file_path, sep=';')
         ecg = df['data']
         ecg = ecg[sec_start:sec_stop]
     elif format == "dat":

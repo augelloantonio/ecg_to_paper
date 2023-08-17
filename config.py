@@ -1,5 +1,5 @@
 class SETTINGS:
-    INPUT_FILE_PATH = "ecg_files"
+    INPUT_FILE_PATH = "ecg_files/"
     FILE_NAME = "16265.dat"
     FILE_EXTENSION = "dat"
     OUTPUT_IMAGE_PATH = "builded_images"
